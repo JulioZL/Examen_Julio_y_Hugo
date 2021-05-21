@@ -16,5 +16,6 @@ namespace Modelos
         public String Contrasenia { get; set; }
         public String ClaveGenerica { get; set; }
 
+
     }
 }

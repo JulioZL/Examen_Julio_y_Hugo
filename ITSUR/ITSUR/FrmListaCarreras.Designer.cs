@@ -91,6 +91,7 @@ namespace ITSUR
             this.Controls.Add(this.dgvListaCarreras);
             this.Name = "FrmListaCarreras";
             this.Text = "FrmListaCarreras";
+            this.Load += new System.EventHandler(this.FrmListaCarreras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCarreras)).EndInit();
             this.ResumeLayout(false);
 

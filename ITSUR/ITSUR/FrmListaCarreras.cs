@@ -26,6 +26,8 @@ namespace ITSUR
         {
             DataTable resultado = new DAOCarrera().obtenerTodas();
             dgvListaCarreras.DataSource = resultado;
+            dgvListaCarreras.Columns[2].Visible = false;
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -91,6 +93,11 @@ namespace ITSUR
             {
                 MessageBox.Show("Selecciona la carrera que deseas eliminar");
             }
+        }
+
+        private void FrmListaCarreras_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

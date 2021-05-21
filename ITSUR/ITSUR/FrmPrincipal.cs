@@ -3,6 +3,8 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using Modelos;
 using MySql.Data.MySqlClient;
+using Datos;
+using System.Threading;
 
 namespace ITSUR
 {
@@ -10,19 +12,24 @@ namespace ITSUR
     {
         public static String ClaveUsuario { get; set; }
         public static int TipoUsuario { get; set; }
+        public static String NoControl { get; set; }
+        public static String Inscrito { get; set; }
 
         private int childFormNumber = 0;
-
+        
+    /*
         public FrmPrincipal()
         {
             InitializeComponent();
             MessageBox.Show("El tipo de usuario es " + TipoUsuario);
         }
-        public FrmPrincipal(Usuario user)
+    */
+        public FrmPrincipal()
         {
-            MessageBox.Show("tipo user " + TipoUsuario);
+
             InitializeComponent();
-            if(TipoUsuario == 1)
+            MessageBox.Show("tipo user " + TipoUsuario);
+            if (TipoUsuario == 1)
             {
                 //this.mnuCatalogos.Enabled = false;
                 //this.opcionesToolStripMenuItem.Visible = false;
@@ -38,12 +45,14 @@ namespace ITSUR
                 this.mnuCatalogos.DropDownItems[3].Visible = false;
             }else if(TipoUsuario == 3)
             {
+                //creamos un hilo para advertir si 
+                // se termina el cupo 
+              
                 this.mnuCatalogos.Visible = false;
                 Alumno alum = new Alumno();
 
-               
+                DAOAlumno caliz = new DAOAlumno();
 
-                
                 if (alum.Inscrito.Equals("S"))
                 {
                     this.opcionesToolStripMenuItem.Visible = false;

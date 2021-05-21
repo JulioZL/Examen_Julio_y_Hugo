@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Modelos;
 
 namespace ITSUR
 {
@@ -15,9 +16,26 @@ namespace ITSUR
         public Inscripcion()
         {
             InitializeComponent();
+
+            
         }
+        /*
+        public void consulta_inscrito(Alumno alum)
+        {
+            MySqlCommand consulta =
+               new MySqlCommand(@"SELECT 
+                        Inscrito
+                    FROM Alumnos a 
+                    WHERE a.Inscrito='S");
+        }
+        */
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Inscripcion_Load(object sender, EventArgs e)
         {
 
         }

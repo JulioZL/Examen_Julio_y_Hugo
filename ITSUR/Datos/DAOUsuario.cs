@@ -26,6 +26,7 @@ namespace Datos
                 usuario.Nombre = fila["nombre"].ToString();
                 usuario.Apellido = fila["apellido"].ToString();
                 usuario.TipoUsuario = int.Parse(fila["tipoUsuario"].ToString());
+                usuario.NombreUsuario = fila["Usuario"].ToString();
 
                 return true;
             }

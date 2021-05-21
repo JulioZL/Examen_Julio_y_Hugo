@@ -11,6 +11,7 @@ namespace Datos
     public class Conexion
     {
         static MySqlConnection conexion;
+        
         /// <summary>
         /// Abrir una conexión a MySQL
         /// </summary>

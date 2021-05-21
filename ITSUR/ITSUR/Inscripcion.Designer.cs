@@ -49,11 +49,12 @@ namespace ITSUR
             this.ClaveGrupo,
             this.Horario,
             this.Seleccionar});
-            this.dataGridView1.Location = new System.Drawing.Point(55, 131);
+            this.dataGridView1.Location = new System.Drawing.Point(41, 106);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(685, 304);
+            this.dataGridView1.Size = new System.Drawing.Size(514, 247);
             this.dataGridView1.TabIndex = 1;
             // 
             // Materia
@@ -86,9 +87,10 @@ namespace ITSUR
             // 
             // Terminar
             // 
-            this.Terminar.Location = new System.Drawing.Point(330, 44);
+            this.Terminar.Location = new System.Drawing.Point(248, 36);
+            this.Terminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Terminar.Name = "Terminar";
-            this.Terminar.Size = new System.Drawing.Size(75, 23);
+            this.Terminar.Size = new System.Drawing.Size(56, 19);
             this.Terminar.TabIndex = 2;
             this.Terminar.Text = "Inscribirme";
             this.Terminar.UseVisualStyleBackColor = true;
@@ -96,9 +98,10 @@ namespace ITSUR
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 44);
+            this.label1.Location = new System.Drawing.Point(56, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 17);
+            this.label1.Size = new System.Drawing.Size(103, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Créditos disponibles:";
             // 
@@ -106,32 +109,36 @@ namespace ITSUR
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(219, 31);
+            this.label2.Location = new System.Drawing.Point(164, 25);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 32);
+            this.label2.Size = new System.Drawing.Size(38, 26);
             this.label2.TabIndex = 4;
             this.label2.Text = "35";
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(464, 13);
+            this.label3.Location = new System.Drawing.Point(348, 11);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(296, 115);
+            this.label3.Size = new System.Drawing.Size(222, 93);
             this.label3.TabIndex = 5;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Inscripcion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 447);
+            this.ClientSize = new System.Drawing.Size(600, 363);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Terminar);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Inscripcion";
             this.Text = "Inscripcion";
+            this.Load += new System.EventHandler(this.Inscripcion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

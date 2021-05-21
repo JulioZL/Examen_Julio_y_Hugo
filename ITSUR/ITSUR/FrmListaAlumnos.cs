@@ -8,14 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Datos;
+using Modelos;
 namespace ITSUR
 {
     public partial class FrmListaAlumnos : Form
+
     {
+        public static String Inscrito { get; set; }
         public FrmListaAlumnos()
         {
             InitializeComponent();
             cargarLista();
+            Alumno dao =new Alumno();
+            FrmListaAlumnos.Inscrito = dao.Inscrito;
         }
 
         private void cargarLista() {
@@ -72,6 +77,11 @@ namespace ITSUR
             }
 
             
+
+        }
+
+        private void dgvLista_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

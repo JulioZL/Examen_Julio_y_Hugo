@@ -21,21 +21,19 @@ namespace ITSUR
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             Usuario obj = new Usuario();
+            Alumno alum = new Alumno();
+            
             obj.NombreUsuario = txtUsuario.Text;
             obj.Contrasenia = txtContraseña.Text;
 
             if (new DAOUsuario().validarUsuario(obj))
             {
-                FrmPrincipal prin = new FrmPrincipal();
-
-
                 FrmPrincipal.ClaveUsuario = obj.ClaveGenerica;
                 FrmPrincipal.TipoUsuario = obj.TipoUsuario;
+                FrmPrincipal.NoControl = obj.NombreUsuario;
 
-                //new FrmPrincipal().Show();
-                //llamamos al metodo para saber que cosas puede mostrar el frame
-                //prin.tipoUsuarioFmr();
-                new FrmPrincipal(obj).Show();
+
+                new FrmPrincipal().Show();
                 this.Hide();
             }
             else {
@@ -44,6 +42,11 @@ namespace ITSUR
         }
 
         private void FrmInicioSesion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void txtUsuario_TextChanged(object sender, EventArgs e)
         {
 
         }
