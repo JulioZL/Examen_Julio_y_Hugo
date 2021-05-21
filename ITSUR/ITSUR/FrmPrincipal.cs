@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 using Modelos;
 using MySql.Data.MySqlClient;
@@ -17,7 +18,7 @@ namespace ITSUR
             InitializeComponent();
             MessageBox.Show("El tipo de usuario es " + TipoUsuario);
         }
-        public FrmPrincipal(String nada)
+        public FrmPrincipal(Usuario user)
         {
             MessageBox.Show("tipo user " + TipoUsuario);
             InitializeComponent();
@@ -38,7 +39,15 @@ namespace ITSUR
             }else if(TipoUsuario == 3)
             {
                 this.mnuCatalogos.Visible = false;
+                Alumno alum = new Alumno();
 
+               
+
+                
+                if (alum.Inscrito.Equals("S"))
+                {
+                    this.opcionesToolStripMenuItem.Visible = false;
+                }
             }
 
         }

@@ -18,6 +18,7 @@ namespace Modelos
         public DateTime FechaNac { get; set; }
         public int ClaveCarrera { get; set; }
         public String Contrasenia { get; set; }
+        public String Inscrito { get; set; }
    
     }
 }

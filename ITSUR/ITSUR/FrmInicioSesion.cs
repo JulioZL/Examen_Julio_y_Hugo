@@ -35,7 +35,7 @@ namespace ITSUR
                 //new FrmPrincipal().Show();
                 //llamamos al metodo para saber que cosas puede mostrar el frame
                 //prin.tipoUsuarioFmr();
-                new FrmPrincipal("nada").Show();
+                new FrmPrincipal(obj).Show();
                 this.Hide();
             }
             else {

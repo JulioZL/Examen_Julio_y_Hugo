@@ -33,7 +33,8 @@ namespace Datos
                         ifnull(Apellido2,'') Apellido2,
                         Telefono,
                         FechaNac,
-                        ClaveCarrera
+                        ClaveCarrera,
+                        Inscrito
                     FROM Alumnos a 
                     WHERE Nocontrol=@NoControl");
             consulta.Parameters.AddWithValue("@NoControl",noControl);
@@ -49,7 +50,8 @@ namespace Datos
                     Apellido2 = fila["Apellido2"].ToString(),
                     Telefono = fila["Telefono"].ToString(),
                     FechaNac = DateTime.Parse(fila["FechaNac"].ToString()),
-                    ClaveCarrera = int.Parse(fila["ClaveCarrera"].ToString())
+                    ClaveCarrera = int.Parse(fila["ClaveCarrera"].ToString()),
+                    Inscrito = fila["Inscrito"].ToString()
                 };
                 return alumno;
             }
