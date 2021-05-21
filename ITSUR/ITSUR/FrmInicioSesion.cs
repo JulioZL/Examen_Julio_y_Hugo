@@ -26,14 +26,26 @@ namespace ITSUR
 
             if (new DAOUsuario().validarUsuario(obj))
             {
+                FrmPrincipal prin = new FrmPrincipal();
+
+
                 FrmPrincipal.ClaveUsuario = obj.ClaveGenerica;
                 FrmPrincipal.TipoUsuario = obj.TipoUsuario;
-                new FrmPrincipal().Show();
+
+                //new FrmPrincipal().Show();
+                //llamamos al metodo para saber que cosas puede mostrar el frame
+                //prin.tipoUsuarioFmr();
+                new FrmPrincipal("nada").Show();
                 this.Hide();
             }
             else {
                 MessageBox.Show("Usuario y/o contraseña incorrectos");
             }
+        }
+
+        private void FrmInicioSesion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

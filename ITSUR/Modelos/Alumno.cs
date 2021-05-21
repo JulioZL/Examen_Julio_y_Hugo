@@ -17,6 +17,7 @@ namespace Modelos
         public String Telefono { get; set; }
         public DateTime FechaNac { get; set; }
         public int ClaveCarrera { get; set; }
+        public String Contrasenia { get; set; }
    
     }
 }

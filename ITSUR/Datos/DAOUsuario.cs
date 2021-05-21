@@ -11,11 +11,11 @@ namespace Datos
 {
     public class DAOUsuario
     {
-        public Usuario validarUsuario(Usuario usuario)
+        public bool validarUsuario(Usuario usuario)
         {
             MySqlCommand consulta =
                 new MySqlCommand(@"SELECT *
-                    FROM Usuario WHERE usuario=@usuario and contrasenia=shal1(@contrasenia)");
+                    FROM Usuario WHERE usuario=@usuario and contrasenia=sha1(@contrasenia)");
             consulta.Parameters.AddWithValue("@usuario", usuario.NombreUsuario);
             consulta.Parameters.AddWithValue("@contrasenia", usuario.Contrasenia);
             DataTable resultado = Conexion.ejecutarConsulta(consulta);
@@ -26,11 +26,12 @@ namespace Datos
                 usuario.Nombre = fila["nombre"].ToString();
                 usuario.Apellido = fila["apellido"].ToString();
                 usuario.TipoUsuario = int.Parse(fila["tipoUsuario"].ToString());
-                return usuario;
+
+                return true;
             }
             else
             {
-                return null;
+                return false;
             }
 
         }

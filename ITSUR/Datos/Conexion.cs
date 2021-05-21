@@ -17,7 +17,7 @@ namespace Datos
         /// <returns>True si pudo establecer la conexión y False en caso contrario</returns>
         public static bool conectar()
         {
-            string parametrosConexion = "server=127.0.0.1;database=itsur;" + "uid=root;pwd=0403011214547";
+            string parametrosConexion = "server=127.0.0.1;database=itsur;" + "uid=root;pwd=Futbol.9";
             try
             {
                 conexion = new MySqlConnection(parametrosConexion);

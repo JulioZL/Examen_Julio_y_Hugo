@@ -14,6 +14,7 @@ namespace Modelos
         public int TipoUsuario { get; set; }
         public String NombreUsuario { get; set; }
         public String Contrasenia { get; set; }
+        public String ClaveGenerica { get; set; }
 
     }
 }
