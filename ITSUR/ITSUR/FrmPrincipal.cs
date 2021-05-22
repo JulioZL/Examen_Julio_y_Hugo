@@ -49,13 +49,20 @@ namespace ITSUR
                 // se termina el cupo 
               
                 this.mnuCatalogos.Visible = false;
-                Alumno alum = new Alumno();
+                
 
                 DAOAlumno caliz = new DAOAlumno();
+                Alumno alum = caliz.obtenerUno(NoControl);
 
+                
                 if (alum.Inscrito.Equals("S"))
                 {
                     this.opcionesToolStripMenuItem.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("EL ALUMNO NO SE ENCUENTRA INSCRITO");
+                        
                 }
             }
 

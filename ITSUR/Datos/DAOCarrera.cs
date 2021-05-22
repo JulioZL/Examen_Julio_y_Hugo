@@ -15,16 +15,16 @@ namespace Datos
         public DataTable obtenerTodas()
         {
             MySqlCommand consulta =
-                new MySqlCommand(@"select ClaveCarrera, Nombre, Inicial
+                new MySqlCommand(@"select clave, Nombre, Inicial
                     from carreras
-                    order by Nombre");
+                    order by clave");
             return Conexion.ejecutarConsulta(consulta);
         }
 
         public Carrera obtenerUna(String ClaveCarrera)
         {
             MySqlCommand consulta = new MySqlCommand(
-                  @"select ClaveCarrera, Nombre, Inicial
+                  @"select Clave, Nombre, Inicial
                     from carreras
                     where ClaveCarrera = @ClaveCarrera");
             consulta.Parameters.AddWithValue("@ClaveCarrera", ClaveCarrera);
@@ -36,7 +36,7 @@ namespace Datos
                 //Llenar los datos en una carrera
                 Carrera carrera = new Carrera()
                 {
-                    ClaveCarrera = int.Parse(fila["ClaveCarrera"].ToString()),
+                    ClaveCarrera = int.Parse(fila["Clave"].ToString()),
                     Nombre = fila["Nombre"].ToString(),
                     Inicial = char.Parse(fila["Inicial"].ToString())
                 };
@@ -52,9 +52,9 @@ namespace Datos
         {
             MySqlCommand insert = new MySqlCommand(
                     @"insert into Carreras 
-                      values(@ClaveCarrera, @Nombre, @Inicial)"
+                      values(@Clave, @Nombre, @Inicial)"
                 );
-            insert.Parameters.AddWithValue("@ClaveCarrera", obj.ClaveCarrera);
+            insert.Parameters.AddWithValue("@Clave", obj.ClaveCarrera);
             insert.Parameters.AddWithValue("@Nombre", obj.Nombre);
             insert.Parameters.AddWithValue("@Inicial", obj.Inicial);
 
@@ -67,9 +67,9 @@ namespace Datos
             MySqlCommand update = new MySqlCommand(
                     @"update carreras
                     set Nombre = @Nombre, Inicial = @Inicial
-                    where ClaveCarrera = @ClaveCarrera"
+                    where Clave = @Clave"
                 );
-            update.Parameters.AddWithValue("@ClaveCarrera", obj.ClaveCarrera);
+            update.Parameters.AddWithValue("@Clave", obj.ClaveCarrera);
             update.Parameters.AddWithValue("@Nombre", obj.Nombre);
             update.Parameters.AddWithValue("@Inicial", obj.Inicial);
 
@@ -81,9 +81,9 @@ namespace Datos
         {
             MySqlCommand delete = new MySqlCommand(
                     @"Delete from carreras 
-                    where ClaveCarrera = @ClaveCarrera"
+                    where Clave = @ClaveCarrera"
                 );
-            delete.Parameters.AddWithValue("@ClaveCarrera", ClaveCarrera);
+            delete.Parameters.AddWithValue("@Clave", ClaveCarrera);
 
             int resultado = Conexion.ejecutarSentencia(delete);
             return (resultado > 0);

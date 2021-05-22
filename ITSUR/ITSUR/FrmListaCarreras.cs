@@ -26,7 +26,7 @@ namespace ITSUR
         {
             DataTable resultado = new DAOCarrera().obtenerTodas();
             dgvListaCarreras.DataSource = resultado;
-            dgvListaCarreras.Columns[2].Visible = false;
+            
             
         }
 

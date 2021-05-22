@@ -116,16 +116,6 @@ namespace Datos
             return (resultado > 0);
         }
         
-        public void validar_inscripcion()
-        {
-           MySqlCommand consulta =
-                 new MySqlCommand(@"SELECT
-                        Inscrito
-                    FROM Alumnos a
-                    WHERE Nocontrol = s19120146");
-            Alumno alumno = new Alumno();
-           
-           
-        }
+       
     }
 }

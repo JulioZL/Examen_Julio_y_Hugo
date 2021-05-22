@@ -75,5 +75,10 @@ namespace ITSUR
             
 
         }
+
+        private void FrmListaMaterias_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

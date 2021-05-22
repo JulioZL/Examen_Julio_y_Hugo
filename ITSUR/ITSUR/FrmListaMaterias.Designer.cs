@@ -38,9 +38,10 @@ namespace ITSUR
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(34, 55);
+            this.btnAgregar.Location = new System.Drawing.Point(26, 45);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(82, 35);
+            this.btnAgregar.Size = new System.Drawing.Size(62, 28);
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -53,20 +54,22 @@ namespace ITSUR
             this.dgvLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLista.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvLista.Location = new System.Drawing.Point(12, 112);
+            this.dgvLista.Location = new System.Drawing.Point(9, 91);
+            this.dgvLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvLista.MultiSelect = false;
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.RowHeadersWidth = 51;
             this.dgvLista.RowTemplate.Height = 24;
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLista.Size = new System.Drawing.Size(776, 326);
+            this.dgvLista.Size = new System.Drawing.Size(582, 265);
             this.dgvLista.TabIndex = 1;
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(130, 55);
+            this.btnEditar.Location = new System.Drawing.Point(98, 45);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(82, 35);
+            this.btnEditar.Size = new System.Drawing.Size(62, 28);
             this.btnEditar.TabIndex = 2;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -74,9 +77,10 @@ namespace ITSUR
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(218, 55);
+            this.btnEliminar.Location = new System.Drawing.Point(164, 45);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(82, 35);
+            this.btnEliminar.Size = new System.Drawing.Size(62, 28);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -84,15 +88,17 @@ namespace ITSUR
             // 
             // FrmListaMaterias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.btnAgregar);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmListaMaterias";
             this.Text = "Catálogo de materias";
+            this.Load += new System.EventHandler(this.FrmListaMaterias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.ResumeLayout(false);
 
