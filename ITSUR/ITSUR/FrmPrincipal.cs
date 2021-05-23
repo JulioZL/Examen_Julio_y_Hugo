@@ -62,6 +62,7 @@ namespace ITSUR
                 else
                 {
                     MessageBox.Show("EL ALUMNO NO SE ENCUENTRA INSCRITO");
+                    this.cargaAcademicaToolStripMenuItem.Visible = false;
                     
                         
                 }
@@ -179,6 +180,13 @@ namespace ITSUR
         {
             Inscripcion frm = new Inscripcion();
             frm.Show();
+            this.Hide();
+        }
+
+        private void cargaAcademicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaCarga cargaA = new ConsultaCarga();
+            cargaA.Show();
             this.Hide();
         }
     }

@@ -48,6 +48,7 @@ namespace ITSUR
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.cargaAcademicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -117,7 +118,8 @@ namespace ITSUR
             // opcionesToolStripMenuItem
             // 
             this.opcionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.capturaDeCalificacionesToolStripMenuItem});
+            this.capturaDeCalificacionesToolStripMenuItem,
+            this.cargaAcademicaToolStripMenuItem});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
             this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.opcionesToolStripMenuItem.Text = "Opciones";
@@ -193,6 +195,13 @@ namespace ITSUR
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
+            // cargaAcademicaToolStripMenuItem
+            // 
+            this.cargaAcademicaToolStripMenuItem.Name = "cargaAcademicaToolStripMenuItem";
+            this.cargaAcademicaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cargaAcademicaToolStripMenuItem.Text = "Carga Académica";
+            this.cargaAcademicaToolStripMenuItem.Click += new System.EventHandler(this.cargaAcademicaToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,6 +243,7 @@ namespace ITSUR
         private System.Windows.Forms.ToolStripMenuItem gruposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem opcionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem capturaDeCalificacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cargaAcademicaToolStripMenuItem;
     }
 }
 

@@ -22,7 +22,7 @@ namespace ITSUR
         private void actualizar()
         {
             DAOGrupo dao = new DAOGrupo();
-            MessageBox.Show(FrmPrincipal.NoControl);
+            //MessageBox.Show(FrmPrincipal.NoControl);
             int carrera = new DAOAlumno().obtenerCarrera(FrmPrincipal.NoControl);
             dataGridView1.DataSource = dao.obtener_por_carrera(carrera);
         }
@@ -42,7 +42,7 @@ namespace ITSUR
                    int cont =int.Parse( label2.Text);
                     //obtener nombre de la materia 
                     string valor = x.Cells[6].Value.ToString();
-                    //HAEMOS UNA CONSILTA PARA VER EL CUPO DE LA MATERIA
+                    
                     try
                     {
                         //optenemos cupo de grupo 
@@ -63,9 +63,6 @@ namespace ITSUR
                             bool check_grupo = dao.actualizar(obj_grupo);
                             //mostramos los nuevos resultados
                             actualizar();
-
-
-                            //obj_grupo = dao.obtener_cupo_grupo(clave_grupo);
                         }
                         
                     }
@@ -82,6 +79,7 @@ namespace ITSUR
                         }
                         else
                         {
+                            cont += creditos_alum;
                             MessageBox.Show("CREDITOS INSUFICIENTES"); 
                         }
                         

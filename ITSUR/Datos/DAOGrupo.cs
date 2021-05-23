@@ -111,15 +111,6 @@ namespace Datos
             
             return Conexion.ejecutarConsulta(consulta);
         }
-        public void obtener_cupo_grupo(String grupo)
-        {
-            MySqlCommand update = new MySqlCommand(
-               @"UPDATE Grupos
-                SET cupo=@cupo,
-                WHERE ClaveGrupo=@ClaveGrupo"
-                );
-            update.Parameters.AddWithValue("@ClaveGrupo", grupo);
-            Conexion.ejecutarConsulta(update);
-        }
+       
     }
 }
