@@ -47,5 +47,17 @@ namespace Datos
             int resultado = Conexion.ejecutarSentencia(delete);
             return (resultado > 0);
         }
+        public int credito_por_materia(String materia)
+        {
+            MySqlCommand consulta =
+               new MySqlCommand(@"SELECT 
+                    Creditos
+                    FROM Materias m
+                    WHERE m.nombre=@materia");
+            consulta.Parameters.AddWithValue("@materia", materia);
+            DataTable resultado = Conexion.ejecutarConsulta(consulta);
+
+            return int.Parse(resultado.Rows[0][0].ToString());
+        }
     }
 }

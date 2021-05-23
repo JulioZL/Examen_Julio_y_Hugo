@@ -98,5 +98,28 @@ namespace Datos
             int resultado = Conexion.ejecutarSentencia(delete);
             return (resultado > 0);
         }
+        public DataTable obtener_por_carrera(int clave_carrera)
+        {
+            MySqlCommand consulta =
+               new MySqlCommand(@"SELECT g.id, m.Nombre Materia, m.Nombre Carrera,g.Cupo,
+                    g.ClaveGrupo, g.horario, m.creditos
+                    FROM Grupos g
+                    JOIN Materias m ON g.ClaveMateria=m.Id
+                    where m.ClaveCarrera = @clave
+                    ORDER BY Carrera, Materia, ClaveGrupo;");
+            consulta.Parameters.AddWithValue("@clave", clave_carrera);
+            
+            return Conexion.ejecutarConsulta(consulta);
+        }
+        public void obtener_cupo_grupo(String grupo)
+        {
+            MySqlCommand update = new MySqlCommand(
+               @"UPDATE Grupos
+                SET cupo=@cupo,
+                WHERE ClaveGrupo=@ClaveGrupo"
+                );
+            update.Parameters.AddWithValue("@ClaveGrupo", grupo);
+            Conexion.ejecutarConsulta(update);
+        }
     }
 }

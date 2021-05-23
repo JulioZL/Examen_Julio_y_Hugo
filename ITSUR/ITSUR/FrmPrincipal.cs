@@ -62,6 +62,7 @@ namespace ITSUR
                 else
                 {
                     MessageBox.Show("EL ALUMNO NO SE ENCUENTRA INSCRITO");
+                    
                         
                 }
             }
@@ -172,6 +173,13 @@ namespace ITSUR
 
             }
 
+        }
+
+        private void capturaDeCalificacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Inscripcion frm = new Inscripcion();
+            frm.Show();
+            this.Hide();
         }
     }
 }

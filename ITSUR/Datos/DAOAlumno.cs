@@ -115,6 +115,18 @@ namespace Datos
             int resultado = Conexion.ejecutarSentencia(delete);
             return (resultado > 0);
         }
+        public int obtenerCarrera(String noControl)
+        {
+            MySqlCommand consulta =
+                new MySqlCommand(@"SELECT 
+                        ClaveCarrera
+                    FROM Alumnos a 
+                    WHERE Nocontrol=@NoControl");
+            consulta.Parameters.AddWithValue("@NoControl", noControl);
+            DataTable resultado = Conexion.ejecutarConsulta(consulta);
+            
+            return int.Parse(resultado.Rows[0][0].ToString());
+        }
         
        
     }

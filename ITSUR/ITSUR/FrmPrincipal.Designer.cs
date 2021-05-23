@@ -125,8 +125,9 @@ namespace ITSUR
             // capturaDeCalificacionesToolStripMenuItem
             // 
             this.capturaDeCalificacionesToolStripMenuItem.Name = "capturaDeCalificacionesToolStripMenuItem";
-            this.capturaDeCalificacionesToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.capturaDeCalificacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.capturaDeCalificacionesToolStripMenuItem.Text = "Inscripción";
+            this.capturaDeCalificacionesToolStripMenuItem.Click += new System.EventHandler(this.capturaDeCalificacionesToolStripMenuItem_Click);
             // 
             // windowsMenu
             // 
