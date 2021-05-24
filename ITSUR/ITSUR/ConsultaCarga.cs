@@ -18,9 +18,7 @@ namespace ITSUR
         {
             InitializeComponent();
             DAOGrupo dao = new DAOGrupo();
-            //MessageBox.Show(FrmPrincipal.NoControl);
-            int carrera = new DAOAlumno().obtenerCarrera(FrmPrincipal.NoControl);
-            dataGridView1.DataSource = dao.obtener_por_carrera(carrera);
+            dataGridView1.DataSource = dao.obtener_carga(FrmPrincipal.NoControl);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

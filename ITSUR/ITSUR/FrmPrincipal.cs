@@ -57,7 +57,8 @@ namespace ITSUR
                 
                 if (alum.Inscrito.Equals("S"))
                 {
-                    this.opcionesToolStripMenuItem.Visible = false;
+                    this.capturaDeCalificacionesToolStripMenuItem.Visible = false;
+                    this.cargaAcademicaToolStripMenuItem.Visible = true;
                 }
                 else
                 {

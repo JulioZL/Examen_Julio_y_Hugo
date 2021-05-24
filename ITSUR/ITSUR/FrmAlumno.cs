@@ -103,6 +103,7 @@ namespace ITSUR
             alumno.Apellido1 = txtApellido1.Text.Trim();
             alumno.Apellido2 = txtApellido2.Text.Trim();
             alumno.Telefono = txtTelefono.Text.Trim();
+            alumno.Inscrito = txtInscrito.Text.Trim();
             alumno.FechaNac = dtpFechaNac.Value;
             alumno.ClaveCarrera = int.Parse(cboCarrera.SelectedValue.ToString());
 

@@ -88,5 +88,16 @@ namespace Datos
             int resultado = Conexion.ejecutarSentencia(delete);
             return (resultado > 0);
         }
+        public bool insertar_alumno_grupo(Alumno alum, Grupo grup)
+        {
+            MySqlCommand insert = new MySqlCommand(
+                   @"insert into `alumnosgrupos` 
+                      values(@noControl, @idGrupo)"
+               );
+            insert.Parameters.AddWithValue("@noControl", alum.NoControl);
+            insert.Parameters.AddWithValue("@idGrupo", grup.ClaveCarrera);
+            int resultado = Conexion.ejecutarSentencia(insert);
+            return (resultado > 0);
+        }
     }
 }

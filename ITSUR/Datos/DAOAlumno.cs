@@ -69,7 +69,8 @@ namespace Datos
             MySqlCommand insert = new MySqlCommand(
                 @"INSERT INTO Alumnos VALUES(@NoControl,
                     @Nombre,@Apellido1,@Apellido2,
-                    @Telefono,@FechaNac,@ClaveCarrera)"
+                    @Telefono,@FechaNac,@ClaveCarrera,
+                    sha1(@contrasenia), @Inscrito)"
                 );
             insert.Parameters.AddWithValue("@NoControl", obj.NoControl);
             insert.Parameters.AddWithValue("@Nombre", obj.Nombre);
@@ -78,6 +79,8 @@ namespace Datos
             insert.Parameters.AddWithValue("@Telefono", obj.Telefono);
             insert.Parameters.AddWithValue("@FechaNac", obj.FechaNac);
             insert.Parameters.AddWithValue("@ClaveCarrera", obj.ClaveCarrera);
+            insert.Parameters.AddWithValue("@contrasenia", obj.Contrasenia);
+            insert.Parameters.AddWithValue("@Inscrito", obj.Inscrito);
 
             int resultado = Conexion.ejecutarSentencia(insert);
             return (resultado > 0);
@@ -126,6 +129,17 @@ namespace Datos
             DataTable resultado = Conexion.ejecutarConsulta(consulta);
             
             return int.Parse(resultado.Rows[0][0].ToString());
+        }
+        public bool inscribir_alumno(string nocontrol)
+        {
+            MySqlCommand update = new MySqlCommand(
+               @"UPDATE Alumnos
+                SET Inscrito='S'
+                WHERE NoControl=@NoControl"
+               );
+            update.Parameters.AddWithValue("@NoControl", nocontrol);
+            int resultado = Conexion.ejecutarSentencia(update);
+            return (resultado > 0);
         }
         
        

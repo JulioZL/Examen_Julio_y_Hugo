@@ -28,7 +28,12 @@ namespace Datos
             if (resultado != null && resultado.Rows.Count > 0) //Si coincide
             {
                 DataRow fila = resultado.Rows[0];
-                usuario.IdUsuario = int.Parse(fila["ClaveGenerica"].ToString());
+                try
+                {
+                    usuario.IdUsuario = int.Parse(fila["ClaveGenerica"].ToString());
+                }
+                catch (Exception ex) { }
+                
                 usuario.Nombre = fila["nombre"].ToString();
                 usuario.Apellido = fila["apellido"].ToString();
                 usuario.TipoUsuario = int.Parse(fila["tipoUsuario"].ToString());

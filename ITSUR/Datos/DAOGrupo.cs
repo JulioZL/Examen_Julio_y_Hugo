@@ -111,6 +111,28 @@ namespace Datos
             
             return Conexion.ejecutarConsulta(consulta);
         }
+        public int obtener_clave_materia(int id_chido)
+        {
+            MySqlCommand consulta =
+               new MySqlCommand(@"SELECT g.claveMateria
+            from grupos g
+            where g.id = @idGrupo");
+            consulta.Parameters.AddWithValue("@idGrupo", id_chido);
+            DataTable resultado  = Conexion.ejecutarConsulta(consulta);
+            return int.Parse(resultado.Rows[0][0].ToString());
+        }
+        public DataTable obtener_carga(String nocontrol)
+        {
+            MySqlCommand consulta =
+               new MySqlCommand(@"select m.nombre, g.clavegrupo, g.horario
+                from materias m join grupos g on m.id = g.clavemateria
+                join alumnosgrupos ag on g.id = ag.idgrupo
+                where ag.nocontrol = @nocontrol");
+            consulta.Parameters.AddWithValue("@nocontrol", nocontrol);
+            DataTable resultado = Conexion.ejecutarConsulta(consulta);
+
+            return resultado;
+        }
        
     }
 }

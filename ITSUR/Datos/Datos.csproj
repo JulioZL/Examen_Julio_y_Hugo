@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAOAlumnosgrupos.cs" />
     <Compile Include="DAOGrupo.cs" />
     <Compile Include="DAOMateria.cs" />
     <Compile Include="DAOAlumno.cs" />
