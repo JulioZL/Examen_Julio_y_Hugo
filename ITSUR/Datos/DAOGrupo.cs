@@ -111,6 +111,7 @@ namespace Datos
             
             return Conexion.ejecutarConsulta(consulta);
         }
+        //OBTENEMOS CLAVE DE LA CARRERA
         public int obtener_clave_materia(int id_chido)
         {
             MySqlCommand consulta =
@@ -121,6 +122,7 @@ namespace Datos
             DataTable resultado  = Conexion.ejecutarConsulta(consulta);
             return int.Parse(resultado.Rows[0][0].ToString());
         }
+        //OBTENEMOS LA CARGA ACADEMICA 
         public DataTable obtener_carga(String nocontrol)
         {
             MySqlCommand consulta =

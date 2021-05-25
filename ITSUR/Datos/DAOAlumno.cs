@@ -118,6 +118,7 @@ namespace Datos
             int resultado = Conexion.ejecutarSentencia(delete);
             return (resultado > 0);
         }
+        //CONSULTA CREADA PARA OBTENER LA CARRERA DEL ALUMNO
         public int obtenerCarrera(String noControl)
         {
             MySqlCommand consulta =
@@ -130,6 +131,7 @@ namespace Datos
             
             return int.Parse(resultado.Rows[0][0].ToString());
         }
+        //ACTUALIZAMOS EL ALUMNO A INSCRITO
         public bool inscribir_alumno(string nocontrol)
         {
             MySqlCommand update = new MySqlCommand(

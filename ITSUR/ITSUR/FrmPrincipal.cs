@@ -28,7 +28,8 @@ namespace ITSUR
         {
 
             InitializeComponent();
-            MessageBox.Show("tipo user " + TipoUsuario);
+            //MessageBox.Show("tipo user " + TipoUsuario);
+            //DEPENDE EL TIPO DE USUARIO VAMOS A MOSTRAR U OCULTAR COSAS 
             if (TipoUsuario == 1)
             {
                 //this.mnuCatalogos.Enabled = false;
@@ -45,18 +46,20 @@ namespace ITSUR
                 this.mnuCatalogos.DropDownItems[3].Visible = false;
             }else if(TipoUsuario == 3)
             {
-                //creamos un hilo para advertir si 
-                // se termina el cupo 
+                //OCULTAMOS LOS CATALAGOS PORQUE ES UN ALUMNO
               
                 this.mnuCatalogos.Visible = false;
                 
-
+                //DEBEMOS OBTENER LOS DATOS DEL ALUMNO
                 DAOAlumno caliz = new DAOAlumno();
+                //HACEMOS LA CONSULTA PARA OBTENER TODOS LOS DATOS Y SABER 
+                //SI ESTA INSCRITO
                 Alumno alum = caliz.obtenerUno(NoControl);
 
-                
+                //CON LOS DATOS LLENOS DEL ALUMNO VERIFICAMOS SI ESTA INSCRITO
                 if (alum.Inscrito.Equals("S"))
                 {
+                    //OCULTAMOS LAS COSAS DE ALUMNO INSCRITO
                     this.capturaDeCalificacionesToolStripMenuItem.Visible = false;
                     this.cargaAcademicaToolStripMenuItem.Visible = true;
                 }
