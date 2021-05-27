@@ -134,6 +134,7 @@ namespace Datos
             DataTable resultado = Conexion.ejecutarConsulta(consulta);
 
             return resultado;
+            
         }
         //consultar el cupo de los grupos
         public DataTable obtener_cupo_grupos()
@@ -149,7 +150,7 @@ namespace Datos
                     FROM Alumnos a 
                     JOIN Carreras c ON a.ClaveCarrera = c.clave
                     ORDER BY Carrera, Alumno");
-            DataTable Conexion.ejecutarConsulta(consulta);
+            return Conexion.ejecutarConsulta(consulta);
             
         }
 
