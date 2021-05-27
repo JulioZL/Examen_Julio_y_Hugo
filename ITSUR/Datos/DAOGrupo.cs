@@ -135,6 +135,23 @@ namespace Datos
 
             return resultado;
         }
-       
+        //consultar el cupo de los grupos
+        public DataTable obtener_cupo_grupos()
+        {
+            MySqlCommand consulta =
+                new MySqlCommand(@"SELECT NoControl `Num Control`,
+                    `inscrito`,
+                    CONCAT(Apellido1, ' ',
+                    CASE WHEN Apellido2 is null THEN '' ELSE
+                    CONCAT(Apellido2, ' ') END,
+                    a.Nombre) Alumno,
+                    c.Nombre Carrera
+                    FROM Alumnos a 
+                    JOIN Carreras c ON a.ClaveCarrera = c.clave
+                    ORDER BY Carrera, Alumno");
+            DataTable Conexion.ejecutarConsulta(consulta);
+            
+        }
+
     }
 }

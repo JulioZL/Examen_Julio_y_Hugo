@@ -38,7 +38,12 @@ namespace ITSUR
         {
 
         }
+        //metodo para determinar el cupo de las matrias
+        public void llenar_array_cupos_grupos()
+        {
 
+        }
+        
         private void Terminar_Click(object sender, EventArgs e)
         {
             //FOREACH PARA VALIDAR QUE NO QUIERA INSCRIBIRSE 
