@@ -19,6 +19,7 @@ namespace Datos
         public static bool conectar()
         {
             string parametrosConexion = "server=127.0.0.1;database=itsur;" + "uid=root;pwd=Futbol.9";
+            //string parametrosConexion = "server=127.0.0.1;database=itsur;" + "uid=root;pwd=Futbol.9";
             try
             {
                 conexion = new MySqlConnection(parametrosConexion);

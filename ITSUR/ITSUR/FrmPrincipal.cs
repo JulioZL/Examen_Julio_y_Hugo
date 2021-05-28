@@ -5,8 +5,13 @@ using Modelos;
 using MySql.Data.MySqlClient;
 using Datos;
 using System.Threading;
+using System.Collections;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Drawing;
 
 namespace ITSUR
+
 {
     public partial class FrmPrincipal : Form
     {
@@ -16,24 +21,29 @@ namespace ITSUR
         public static String Inscrito { get; set; }
 
         private int childFormNumber = 0;
-        
-    /*
-        public FrmPrincipal()
-        {
-            InitializeComponent();
-            MessageBox.Show("El tipo de usuario es " + TipoUsuario);
-        }
-    */
+        public static List<String> cupos = new List<String>();
+        public Task inicio_cupos;
+
+        /*
+            public FrmPrincipal()
+            {
+                InitializeComponent();
+                MessageBox.Show("El tipo de usuario es " + TipoUsuario);
+            }
+        */
         public FrmPrincipal()
         {
 
             InitializeComponent();
+            
+
             //MessageBox.Show("tipo user " + TipoUsuario);
             //DEPENDE EL TIPO DE USUARIO VAMOS A MOSTRAR U OCULTAR COSAS 
             if (TipoUsuario == 1)
             {
+                //SOLO CATALOGOS 
                 //this.mnuCatalogos.Enabled = false;
-                //this.opcionesToolStripMenuItem.Visible = false;
+                this.opcionesToolStripMenuItem.Visible = false;
             }
             else if(TipoUsuario == 2)
             {
@@ -67,13 +77,71 @@ namespace ITSUR
                 {
                     MessageBox.Show("EL ALUMNO NO SE ENCUENTRA INSCRITO");
                     this.cargaAcademicaToolStripMenuItem.Visible = false;
+
+                    //DataGridView auxCupo = new DataGridView();
+                    //obtenemos la clave de la carrera
                     
+                    DAOGrupo daoG = new DAOGrupo();
+                    int carrera = new DAOAlumno().obtenerCarrera(FrmPrincipal.NoControl);
+                    auxCupo.DataSource = daoG.obtener_cupo_grupos(carrera);
+
+                    
+                    foreach (DataGridViewRow x in auxCupo.Rows)
+                    {
                         
+
+                        if (auxCupo.Rows[x.Index].Cells[0] != null)
+                        {
+                            //recuperamos los valores de cada fila
+                            string nombre_materia = auxCupo.Rows[x.Index].Cells[0].Value.ToString();
+                            string clave_grupo = auxCupo.Rows[x.Index].Cells[1].Value.ToString();
+                            string horario = auxCupo.Rows[x.Index].Cells[2].Value.ToString();
+                           
+                            string cupo = auxCupo.Rows[x.Index].Cells[3].Value.ToString();
+                            int cupo_arr = int.Parse(cupo);
+                            
+                            if (cupo_arr <= 5)
+                            {
+                                String chido = nombre_materia + " Y CUPO: " + cupo;
+                                cupos.Add(chido);
+                            }
+                                
+                            
+
+                        }
+                    }
+                    inicio_cupos = Task.Run(() => llenar_notify(cupos));
+                
+                    
+
+
+
+
                 }
             }
 
         }
+        public async static void llenar_notify(List<String> cupos)
+        {
+            
+            NotifyIcon noti = new NotifyIcon();
+            noti.Icon = new Icon("icono.ico");
+             
+            
+               
+            for (int i = 0; i < cupos.Count; i++)
+            {
+                        
+                noti.Visible = true;
+                noti.BalloonTipTitle = "ATENCIÓN";
+                noti.BalloonTipText = cupos[i];
+                noti.ShowBalloonTip(2000);
+                await Task.Delay(15000);
 
+            }
+          
+            
+        }
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.Cascade);
