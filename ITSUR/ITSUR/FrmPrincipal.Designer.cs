@@ -39,18 +39,14 @@ namespace ITSUR
             this.gruposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.capturaDeCalificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tileVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tileHorizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.arrangeIconsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cargaAcademicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.cargaAcademicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.auxCupo = new System.Windows.Forms.DataGridView();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.auxCupo)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -58,10 +54,8 @@ namespace ITSUR
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuCatalogos,
-            this.opcionesToolStripMenuItem,
-            this.windowsMenu});
+            this.opcionesToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
@@ -127,56 +121,16 @@ namespace ITSUR
             // capturaDeCalificacionesToolStripMenuItem
             // 
             this.capturaDeCalificacionesToolStripMenuItem.Name = "capturaDeCalificacionesToolStripMenuItem";
-            this.capturaDeCalificacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.capturaDeCalificacionesToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.capturaDeCalificacionesToolStripMenuItem.Text = "Inscripción";
             this.capturaDeCalificacionesToolStripMenuItem.Click += new System.EventHandler(this.capturaDeCalificacionesToolStripMenuItem_Click);
             // 
-            // windowsMenu
+            // cargaAcademicaToolStripMenuItem
             // 
-            this.windowsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cascadeToolStripMenuItem,
-            this.tileVerticalToolStripMenuItem,
-            this.tileHorizontalToolStripMenuItem,
-            this.closeAllToolStripMenuItem,
-            this.arrangeIconsToolStripMenuItem});
-            this.windowsMenu.Name = "windowsMenu";
-            this.windowsMenu.Size = new System.Drawing.Size(66, 20);
-            this.windowsMenu.Text = "&Ventanas";
-            // 
-            // cascadeToolStripMenuItem
-            // 
-            this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.cascadeToolStripMenuItem.Text = "&Cascada";
-            this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
-            // 
-            // tileVerticalToolStripMenuItem
-            // 
-            this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.tileVerticalToolStripMenuItem.Text = "Mosaico &vertical";
-            this.tileVerticalToolStripMenuItem.Click += new System.EventHandler(this.TileVerticalToolStripMenuItem_Click);
-            // 
-            // tileHorizontalToolStripMenuItem
-            // 
-            this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.tileHorizontalToolStripMenuItem.Text = "Mosaico &horizontal";
-            this.tileHorizontalToolStripMenuItem.Click += new System.EventHandler(this.TileHorizontalToolStripMenuItem_Click);
-            // 
-            // closeAllToolStripMenuItem
-            // 
-            this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.closeAllToolStripMenuItem.Text = "C&errar todo";
-            this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.CloseAllToolStripMenuItem_Click);
-            // 
-            // arrangeIconsToolStripMenuItem
-            // 
-            this.arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
-            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.arrangeIconsToolStripMenuItem.Text = "&Organizar iconos";
-            this.arrangeIconsToolStripMenuItem.Click += new System.EventHandler(this.ArrangeIconsToolStripMenuItem_Click);
+            this.cargaAcademicaToolStripMenuItem.Name = "cargaAcademicaToolStripMenuItem";
+            this.cargaAcademicaToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.cargaAcademicaToolStripMenuItem.Text = "Carga Académica";
+            this.cargaAcademicaToolStripMenuItem.Click += new System.EventHandler(this.cargaAcademicaToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -195,18 +149,24 @@ namespace ITSUR
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // cargaAcademicaToolStripMenuItem
+            // auxCupo
             // 
-            this.cargaAcademicaToolStripMenuItem.Name = "cargaAcademicaToolStripMenuItem";
-            this.cargaAcademicaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cargaAcademicaToolStripMenuItem.Text = "Carga Académica";
-            this.cargaAcademicaToolStripMenuItem.Click += new System.EventHandler(this.cargaAcademicaToolStripMenuItem_Click);
+            this.auxCupo.AllowUserToAddRows = false;
+            this.auxCupo.AllowUserToDeleteRows = false;
+            this.auxCupo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.auxCupo.Location = new System.Drawing.Point(0, 413);
+            this.auxCupo.Name = "auxCupo";
+            this.auxCupo.ReadOnly = true;
+            this.auxCupo.Size = new System.Drawing.Size(67, 15);
+            this.auxCupo.TabIndex = 4;
+            this.auxCupo.Visible = false;
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 453);
+            this.Controls.Add(this.auxCupo);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
@@ -218,6 +178,7 @@ namespace ITSUR
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.auxCupo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,13 +190,7 @@ namespace ITSUR
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
-        private System.Windows.Forms.ToolStripMenuItem tileHorizontalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuCatalogos;
-        private System.Windows.Forms.ToolStripMenuItem windowsMenu;
-        private System.Windows.Forms.ToolStripMenuItem cascadeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tileVerticalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem arrangeIconsToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem alumnosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carrerasToolStripMenuItem;
@@ -244,6 +199,7 @@ namespace ITSUR
         private System.Windows.Forms.ToolStripMenuItem opcionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem capturaDeCalificacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cargaAcademicaToolStripMenuItem;
+        private System.Windows.Forms.DataGridView auxCupo;
     }
 }
 

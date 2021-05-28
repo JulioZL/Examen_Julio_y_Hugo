@@ -137,21 +137,18 @@ namespace Datos
             
         }
         //consultar el cupo de los grupos
-        public DataTable obtener_cupo_grupos()
+        public DataTable obtener_cupo_grupos(int claveCarrera)
         {
             MySqlCommand consulta =
-                new MySqlCommand(@"SELECT NoControl `Num Control`,
-                    `inscrito`,
-                    CONCAT(Apellido1, ' ',
-                    CASE WHEN Apellido2 is null THEN '' ELSE
-                    CONCAT(Apellido2, ' ') END,
-                    a.Nombre) Alumno,
-                    c.Nombre Carrera
-                    FROM Alumnos a 
-                    JOIN Carreras c ON a.ClaveCarrera = c.clave
-                    ORDER BY Carrera, Alumno");
-            return Conexion.ejecutarConsulta(consulta);
-            
+                new MySqlCommand(@"SELECT M.NOMBRE AS NOMBRE_MATERIA, G.CLAVEGRUPO AS CLAVE_GRUPO, G.HORARIO AS HORARIO,
+                    G.CUPO AS CUPO
+                    FROM GRUPOS G JOIN MATERIAS M ON G.CLAVEMATERIA = M.ID 
+                    JOIN CARRERAS C ON M.CLAVECARRERA = C.CLAVE
+                    WHERE  C.CLAVE = @claveCarrera");
+            consulta.Parameters.AddWithValue("@claveCarrera", claveCarrera);
+            DataTable resultado = Conexion.ejecutarConsulta(consulta);
+            return resultado;
+          
         }
 
     }
